@@ -1,0 +1,98 @@
+# convert none jason like zip files and csv to json
+def convert_to_json(file_name):
+    with open(file_name, 'r') as f:
+        data = f.readlines()
+        data = map(lambda x: x.rstrip(), data)
+        data_json = "[" + ','.join(data) + "]"
+        return data_json
+
+
+
+import zipfile
+import os
+def convert_zip_of_csv_to_json(file):
+    with zipfile.ZipFile(file, 'r') as zip_ref:
+        zip_ref.extractall()
+        for file in os.listdir():
+            if file.endswith('.csv'):
+                data_json = convert_to_json(file)
+                with open(file, 'w') as f:
+                    f.write(data_json)
+
+
+
+from os import walk
+
+Laufen = []
+Rennen = []
+Sitzen = []
+Stehen = []
+Treppenlaufen  = []
+Velofahren = []
+
+for (dirpath, dirnames, filenames) in walk("Messungen"):
+    for file in filenames:
+        if file.endswith('.zip'):
+            convert_zip_of_csv_to_json(dirpath + '/' + file)
+        
+        
+        
+    if (dirpath.count('\\') == 2):
+        if ('Laufen' in dirpath):
+            Laufen.append(dirpath)
+        elif ('Sitzen' in dirpath):
+            Rennen.append(dirpath)
+        elif('Stehen' in dirpath):
+            Stehen.append(dirpath)
+        elif('Rennen' in dirpath):
+            Rennen.append(dirpath)
+        elif('Velofahren' in dirpath):
+            Velofahren.append(dirpath)
+        elif('Treppenlaufen' in dirpath):
+            Treppenlaufen.append(dirpath)
+
+
+
+
+
+
+
+def combine_all_file_with_dirpath(dirpaths):
+    all_files = []
+    for dirpath in dirpaths:
+        for (dirpath, dirnames, filenames) in walk(dirpath):
+            for filename in filenames:
+                all_files.append(dirpath + '\\' + filename)
+    return all_files
+
+
+
+
+
+
+
+
+files_laufen = combine_all_file_with_dirpath(Laufen)
+files_rennen = combine_all_file_with_dirpath(Rennen)
+files_sitzen = combine_all_file_with_dirpath(Sitzen)
+files_stehen = combine_all_file_with_dirpath(Stehen)
+files_rennen = combine_all_file_with_dirpath(Rennen)
+files_velofahren = combine_all_file_with_dirpath(Velofahren)
+files_treppenlaufen = combine_all_file_with_dirpath(Treppenlaufen)
+
+
+
+
+import json
+def concat_json(files):
+    all_json = []
+    for file in files:
+        with open(file, 'r') as f:
+            all_json.append(json.load(f))
+    return all_json
+
+
+
+
+
+concat_laufen = concat_json(files_laufen)
