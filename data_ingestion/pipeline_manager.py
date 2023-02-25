@@ -1,4 +1,4 @@
-from . import Utilities
+from . import utilities
 
 
 class PipelineRunner:
@@ -19,7 +19,7 @@ class PipelineRunner:
 
     def run(self):
         if self.__origin == "SensorLogger":
-            utility = Utilities.SensorData(self.path)
+            utility = utilities.SensorData(self.path)
             status = utility.set_data()
             data = utility.get_data()
 
