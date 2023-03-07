@@ -89,11 +89,18 @@ class SensorData:
                 ]
                 bootstraping = bootstraping[cols]
                 bootstraping = bootstraping.filter(pl.all(set(cols) - {"time"}).is_not_null())
-                bootstraping = bootstraping.with_columns(
-                    pl.lit(file.split("/")[-1].split(".")[0]).alias("id")
-                )
-                bootstraping = bootstraping.with_columns(pl.lit(file.split("/")[-2]).alias("user"))
-                bootstraping = bootstraping.with_columns(pl.lit(file.split("/")[-3]).alias("class"))
+                if os.name == 'nt':
+                    bootstraping = bootstraping.with_columns(
+                        pl.lit(file.split("\\")[-1].split(".")[0]).alias("id")
+                    )
+                    bootstraping = bootstraping.with_columns(pl.lit(file.split("\\")[-2]).alias("user"))
+                    bootstraping = bootstraping.with_columns(pl.lit(file.split("\\")[-3]).alias("class"))
+                else:
+                    bootstraping = bootstraping.with_columns(
+                        pl.lit(file.split("/")[-1].split(".")[0]).alias("id")
+                    )
+                    bootstraping = bootstraping.with_columns(pl.lit(file.split("/")[-2]).alias("user"))
+                    bootstraping = bootstraping.with_columns(pl.lit(file.split("/")[-3]).alias("class"))   
                 if type(data) == type(None):
                     self.__data = bootstraping
                 else:
