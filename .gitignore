@@ -1,3 +1,4 @@
 Messungen
 *.csv
 *.json
+*.arrow

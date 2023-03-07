@@ -95,6 +95,7 @@ class SensorData:
                     )
                     bootstraping = bootstraping.with_columns(pl.lit(file.split("\\")[-2]).alias("user"))
                     bootstraping = bootstraping.with_columns(pl.lit(file.split("\\")[-3]).alias("class"))
+                    
                 else:
                     bootstraping = bootstraping.with_columns(
                         pl.lit(file.split("/")[-1].split(".")[0]).alias("id")
