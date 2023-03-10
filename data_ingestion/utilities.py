@@ -114,7 +114,6 @@ class SensorData:
                 if type(self.__data) == type(None):
                     self.__data = bootstraping
                 else:
-                    print('concat')
                     self.__data = pl.concat([self.__data, bootstraping], how="diagonal")
 
             except Exception as e:
