@@ -85,7 +85,16 @@ class SensorData:
                     "time",
                     "Accelerometer_x",
                     "Accelerometer_y",
-                    "Accelerometer_z",
+                    "Accelerometer_z"
+                    "Gyroscope_x",
+                    "Gyroscope_y",
+                    "Gyroscope_z",
+                    "Magnetometer_x",
+                    "Magnetometer_y",
+                    "Magnetometer_z",
+                    "Orientation_x",
+                    "Orientation_y",
+                    "Orientation_z",
                 ]
                 bootstraping = bootstraping[cols]
                 bootstraping = bootstraping.filter(pl.all(set(cols) - {"time"}).is_not_null())
