@@ -2,3 +2,6 @@ polars==0.16.2
 dataclasses-tensor
 ipywidgets
 matplotlib
+tqdm
+plotly
+nbformat
