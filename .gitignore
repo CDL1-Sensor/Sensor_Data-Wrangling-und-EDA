@@ -6,6 +6,7 @@ Messungen
 __pycache__/
 *.py[cod]
 *$py.class
+plots/raw_vs_trimmed/
 
 # C extensions
 *.so
