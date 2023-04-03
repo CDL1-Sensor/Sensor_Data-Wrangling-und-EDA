@@ -8,3 +8,16 @@ die Daten werden hier geladen:
 
 [utilities.py](./data_ingestion/utilities.py) 
 in der Klassen Methode set_data
+
+## Daten Wrangling
+### File Alle-Messungen.csv erstellen
+import-export_data.ipynb durchführen, um File "Alle-Messungen.csv" zu erstellen
+
+### File Alle-Messungen_trimmed.csv erstellen
+data-wrangling.ipynb durchführen, um File "Alle-Messungen_trimmed.csv" zu erstellen
+
+## Daten Exploration
+Für die Exploration der Daten gibt es unterschiedliche Notebooks.
+- eda.ipynb (Haupt Notebook)
+- eda-pandasprofiling-inspiration.ipynb (EDA mittels Pandas Profiling für Inspirationszwecken)
+
