@@ -5,3 +5,5 @@ matplotlib
 tqdm
 plotly
 nbformat
+scikit-learn
+imbalanced-learn
