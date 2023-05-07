@@ -1,23 +1,20 @@
-# Sensor_Data-Wrangling-und-EDA
+# Data Wrangling und EDA
+Dieses Notebook dient als eine Anleitung, wie wir unsere Sensordaten bearbeitet haben. Dabei ist die Reihenfolge der ausgeführten Notebooks wichtig. Dieses README dient als eine Übersicht, welche Notebooks man in welcher Reihenfolge ausführen muss, um die Daten zu kriegen, die wir bearbeitet haben.   
 
-## Daten einlesen
-### Download Onedrive Daten zu ./Messungen/...
-![image](https://user-images.githubusercontent.com/32195170/223469168-89ab3784-cf63-4f52-9e77-159ba23b100d.png)
+Alternativ können die verarbeiteten Daten auch auf dem PicoShare von Etienne heruntergeladen werden. Nach dem herunterladen kann man die Daten in dieses Repository dann verschieben. 
 
-die Daten werden hier geladen:
+# Download Onedrive Daten zu ./Messungen/...
+Aus dem OneDrive von Etienne die Sensormessungen in dieses Repository verschieben.  
+![image](https://user-images.githubusercontent.com/32195170/223469168-89ab3784-cf63-4f52-9e77-159ba23b100d.png)  
 
-[utilities.py](./data_ingestion/utilities.py) 
-in der Klassen Methode set_data
+Die Daten werden von [utilities.py](./data_ingestion/utilities.py), Methode SensorData.set_data() geladen. 
 
-## Daten Wrangling
-### File Alle-Messungen.csv erstellen
-import-export_data.ipynb durchführen, um File "Alle-Messungen.csv" zu erstellen
+# Daten 
+| PicoShare Link | Notebook to run | creates file | Beschreibung | 
+|----------------|-----------------|--------------| ---------------------------|
+| [Alle_Messungen.csv]() | [import_export_data.ipynb](https://github.com/CDL1-Sensor/Sensor_Data-Wrangling-und-EDA/blob/master/import_export_data.ipynb) | Alle_Messungen.csv | Dieses Notebook liest alle Sensordaten aus dem "Messungen" Ordner vom OneDrive und fügt diese zu einem grossen File zusammen, welches als csv. exportiert wird. |
+| [Alle_Messungen_trimmed.csv]() | [data-wrangling.ipynb](https://github.com/CDL1-Sensor/Sensor_Data-Wrangling-und-EDA/blob/master/data-wrangling.ipynb) | Alle_Messungen_trimmed.csv | Dieses Notebook liest das File "Alle_Messungen.csv" und schneidet die ersten und letzten 5 Sekunden jeder Messung ab und exportiert diese als Alle_Messungen_trimmed.csv | 
+| [data_trimmed_aggregated_windows_size_5s.csv]() | [data-wrangling.ipynb](https://github.com/CDL1-Sensor/Sensor_Data-Wrangling-und-EDA/blob/master/data-wrangling.ipynb) | data_trimmed_aggregated_windows_size_5s.csv | Dieses Notebook liest das File "Alle_Messungen_trimmed.csv" und aggregiert die Daten in 5 Sekunden Windows unabhängig von welcher Frequenz die Daten aufgenommen wurden. Die aggregierten Daten werden als data_trimmed_aggregated_windows_size_5s.csv exportiert. |
 
-### File Alle-Messungen_trimmed.csv erstellen
-data-wrangling.ipynb durchführen, um File "Alle-Messungen_trimmed.csv" zu erstellen
-
-## Daten Exploration
-Für die Exploration der Daten gibt es unterschiedliche Notebooks.
-- eda.ipynb (Haupt Notebook)
-- eda-pandasprofiling-inspiration.ipynb (EDA mittels Pandas Profiling für Inspirationszwecken)
-
+# Dokumentation
+Die Dokumentation erfolgt in den jeweiligen Notebooks selbst.
