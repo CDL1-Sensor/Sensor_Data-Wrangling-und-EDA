@@ -3,11 +3,16 @@ Dieses Notebook dient als eine Anleitung, wie wir unsere Sensordaten bearbeitet 
 
 Alternativ können die verarbeiteten Daten auch auf dem PicoShare von Etienne heruntergeladen werden. Nach dem herunterladen kann man die Daten in dieses Repository dann verschieben. 
 
-# Download Onedrive Daten zu ./Messungen/...
-Aus dem OneDrive von Etienne die Sensormessungen in dieses Repository verschieben.  
-![image](https://user-images.githubusercontent.com/32195170/223469168-89ab3784-cf63-4f52-9e77-159ba23b100d.png)  
+# Run Anleitung
+Aus dem OneDrive von Etienne die Sensormessungen in dieses Repository verschieben.   
+(Download Onedrive Daten zu ./Messungen/...)   
 
-Die Daten werden von [utilities.py](./data_ingestion/utilities.py), Methode SensorData.set_data() geladen. 
+![image](https://user-images.githubusercontent.com/32195170/223469168-89ab3784-cf63-4f52-9e77-159ba23b100d.png)   
+
+Die Daten werden von [utilities.py](./data_ingestion/utilities.py), Methode SensorData.set_data() geladen.   
+
+Anschliessend [import_export_data.ipynb](https://github.com/CDL1-Sensor/Sensor_Data-Wrangling-und-EDA/blob/master/import_export_data.ipynb) ausführen und dann [data-wrangling.ipynb](https://github.com/CDL1-Sensor/Sensor_Data-Wrangling-und-EDA/blob/master/data-wrangling.ipynb).   
+Im Repository sollten sich nun 3 weitere csv Files befinden (Siehe Tabelle unten). 
 
 # Daten 
 | PicoShare Link | Notebook to run | creates file | Beschreibung | 
