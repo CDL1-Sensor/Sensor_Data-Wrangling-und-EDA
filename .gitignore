@@ -6,7 +6,15 @@ Messungen
 __pycache__/
 *.py[cod]
 *$py.class
-plots/raw-vs-trimmed/
+plots/raw-vs-trimmed/*
+
+# exception to the rule
+!plots/raw-vs-trimmed/1_iphone13mini-2023-03-12_11-22-48Weiping_ZhangLaufen.png
+!plots/raw-vs-trimmed/05_iPhone14Pro-2023-03-09_16-34-41Yvo_KellerLaufen.png
+!plots/raw-vs-trimmed/7_iphone13mini-2023-03-12_12-01-19Weiping_ZhangLaufen.png
+!plots/raw-vs-trimmed/11_iphone13mini-2023-03-12_12-07-48Weiping_ZhangRennen.png
+!plots/raw-vs-trimmed/08_SamsungA22-2023-02-27_15-51-28Ben_TranVelofahren
+
 
 # C extensions
 *.so
