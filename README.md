@@ -3,14 +3,19 @@ Dieses Notebook dient als eine Anleitung, wie wir unsere Sensordaten bearbeitet 
 
 Alternativ können die verarbeiteten Daten auch auf dem PicoShare von Etienne heruntergeladen werden. Nach dem herunterladen kann man die Daten in dieses Repository dann verschieben. 
 
-# Data Wrangling
+# [Data Wrangling](https://github.com/CDL1-Sensor/Sensor_Data-Wrangling-und-EDA/blob/master/data-wrangling.ipynb)
 
-Die Daten wurden eingelesen und in ein DataFrame Format überführt. Anschliessend wurde von jeder Messung die ersten 5 und letzten 5 Sekunden geschnitten. Anschliessend wurden die Daten in einem 5 Sekunden Zeitfenster Aggregiert. 
+Die Daten wurden eingelesen und in ein DataFrame Format überführt. Anschliessend wurde von jeder Messung die ersten 5 und letzten 5 Sekunden geschnitten. Weiter wurden die Daten in einem 5 Sekunden Zeitfenster Aggregiert. 
 
-# Explorative Datenanalyse
+Für die ML Modelle wurden die Aggregierten Daten verwendet.    
+Bei den DL Modellen wurden die getrimmten Daten genuetzt. 
+
+# [Explorative Datenanalyse](https://github.com/CDL1-Sensor/Sensor_Data-Wrangling-und-EDA/blob/master/eda.ipynb)
 
 Bei der Explorativen Datenanalyse wurde jeweils die Verteilung der Sensorwerte betrachtet pro Person / Bewegungsprofil. 
 Weiter wurde ein Vergleich von Rohdaten gegenüber den getrimmten Daten visualisiert. 
+
+Zusätzlich wurde ein [Pandas Profiling](https://github.com/CDL1-Sensor/Sensor_Data-Wrangling-und-EDA/blob/master/eda-pandasprofiling-inspiration.ipynb) auf den Datensatz versucht. 
 
 
 # Run Anleitung
