@@ -3,6 +3,16 @@ Dieses Notebook dient als eine Anleitung, wie wir unsere Sensordaten bearbeitet 
 
 Alternativ können die verarbeiteten Daten auch auf dem PicoShare von Etienne heruntergeladen werden. Nach dem herunterladen kann man die Daten in dieses Repository dann verschieben. 
 
+# Data Wrangling
+
+Die Daten wurden eingelesen und in ein DataFrame Format überführt. Anschliessend wurde von jeder Messung die ersten 5 und letzten 5 Sekunden geschnitten. Anschliessend wurden die Daten in einem 5 Sekunden Zeitfenster Aggregiert. 
+
+# Explorative Datenanalyse
+
+Bei der Explorativen Datenanalyse wurde jeweils die Verteilung der Sensorwerte betrachtet pro Person / Bewegungsprofil. 
+Weiter wurde ein Vergleich von Rohdaten gegenüber den getrimmten Daten visualisiert. 
+
+
 # Run Anleitung
 Aus dem OneDrive von Etienne die Sensormessungen in dieses Repository verschieben.   
 (Download Onedrive Daten zu ./Messungen/...)   
@@ -20,6 +30,7 @@ Im Repository sollten sich nun 3 weitere csv Files befinden (Siehe Tabelle unten
 | [Alle_Messungen.csv]() | [import_export_data.ipynb](https://github.com/CDL1-Sensor/Sensor_Data-Wrangling-und-EDA/blob/master/import_export_data.ipynb) | Alle_Messungen.csv | Dieses Notebook liest alle Sensordaten aus dem "Messungen" Ordner vom OneDrive und fügt diese zu einem grossen File zusammen, welches als csv. exportiert wird. |
 | [Alle_Messungen_trimmed.csv](https://pico.roulet.dev/-Lxh2bGZHWm/Alle_Messungen_trimmed.csv) | [data-wrangling.ipynb](https://github.com/CDL1-Sensor/Sensor_Data-Wrangling-und-EDA/blob/master/data-wrangling.ipynb) | Alle_Messungen_trimmed.csv | Dieses Notebook liest das File "Alle_Messungen.csv" und schneidet die ersten und letzten 5 Sekunden jeder Messung ab und exportiert diese als Alle_Messungen_trimmed.csv | 
 | [data_trimmed_aggregated_windows_size_5s.csv](https://pico.roulet.dev/-AE89rfHJYt/data_trimmed_aggregated_windows_size_5s.csv) | [data-wrangling.ipynb](https://github.com/CDL1-Sensor/Sensor_Data-Wrangling-und-EDA/blob/master/data-wrangling.ipynb) | data_trimmed_aggregated_windows_size_5s.csv | Dieses Notebook liest das File "Alle_Messungen_trimmed.csv" und aggregiert die Daten in 5 Sekunden Windows unabhängig von welcher Frequenz die Daten aufgenommen wurden. Die aggregierten Daten werden als data_trimmed_aggregated_windows_size_5s.csv exportiert. |
+
 
 # Dokumentation
 Die Dokumentation erfolgt in den jeweiligen Notebooks selbst.
